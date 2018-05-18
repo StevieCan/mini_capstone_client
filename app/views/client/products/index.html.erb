@@ -1,7 +1,19 @@
 <% @products.each do |product|%>
   <h1><%= product["id"]%></h1>
+  
+  <% if product["discounted"] %>
+    <h3>Discount Item!</h3>
+  <% else %>
+    <h3>Everyday Value!</h3>
+    <h3></h3>
+  <% end %>
+  
   <h2>Name: <%= product["name"]%></h2>
-  <h3>Price: <%= product["price"]%></h3>
-  <h4>Image Url:<%= product["image_url"]%></h4>
+  <h3 style="color: red;"><%= product["formatted"]["price"]%></h3>
+<!--   <h3 class="<%= "red" if product["discounted"]%>">%= product["formatted"]["price"]%></h3> -->
+  
+
+
   <h5>Description:<%= product["description"] %></h5>
+  <img src="<%= product["image_url"]%>" alt="">
 <% end %>
