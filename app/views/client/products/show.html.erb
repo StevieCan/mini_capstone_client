@@ -5,7 +5,12 @@
 <h3>Total: <%= @product["formatted"]["total"]%></h3>
 <h4>Image Url:<%= @product["image_url"]%></h4>
 <h5>Description:<%= @product["description"] %></h5>
-<img src="@product['image_url'] %>">
+<h5>Supplier:<%= @product["supplier"]["name"] %></h5>
+
+<% @product["images"].each do |image| %>
+  <img src="<%= image["url"] %>">
+<% end %>
+
 
 <a href="/client/products/<%= @product['id'] %>/edit">Edit</a>
 <a href="/client/products/<%= @product['id'] %>" data-method="delete">Delete</a>
