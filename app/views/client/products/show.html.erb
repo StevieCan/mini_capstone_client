@@ -12,14 +12,14 @@
 <% end %>
 <br>
 
-<%= form_tag "/client/orders", method: :post do %>
+<%= form_tag "/client/carted_products", method: :post do %>
   <div>
     <input type="hidden" name="product_id" value="<%= @product['id'] %>">
   </div>
   <div>
     Quantity: <input type="text" name="quantity">
   </div>
-  <input type="submit" name="Create Order">
+  <input type="submit" value="Add To Cart">
 
 <% end %>
 

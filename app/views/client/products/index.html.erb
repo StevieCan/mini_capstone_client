@@ -8,6 +8,13 @@
       <li><a href="/client/products?sort_by=name&&sort_order=desc">Name- Z to A</a></li>
     </ul>
   </li>
+  <li>
+    Categories
+    <ul>
+      <li><a href="/client/products?category=Nike">Nike</a></li>
+      <li><a href="/client/products?category=Adidas">Adidas</a></li>
+    </ul>
+  </li>
 </ul>
 
 
@@ -28,7 +35,7 @@
     <h3></h3>
   <% end %>
   
-  <h2>Name: <%= product["name"]%></h2>
+  <h2><a href="/client/products/<%= product['id'] %>">Name: <%= product["name"]%></a></h2>
   <h3 style="color: red;"><%= product["formatted"]["price"]%></h3>
 <!--   <h3 class="<%= "red" if product["discounted"]%>">%= product["formatted"]["price"]%></h3> -->
   
