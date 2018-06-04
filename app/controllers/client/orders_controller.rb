@@ -12,7 +12,7 @@ class Client::OrdersController < ApplicationController
     @order = response.body
     
     flash[:success] = "Successfully created Order"
-    redirect_to "/client/orders/#{order['id']}"
+    redirect_to "/client/orders/#{@order['id']}"
   end
   
   def show
