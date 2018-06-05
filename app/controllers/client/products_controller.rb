@@ -48,7 +48,7 @@ class Client::ProductsController < ApplicationController
   end
   
   def edit
-    @product_id = params[:id]
+    product_id = params[:id]
     response = Unirest.get("http://localhost:3000/api/products/#{product_id}")
 
     @product = response.body
