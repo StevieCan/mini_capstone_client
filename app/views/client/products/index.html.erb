@@ -18,28 +18,37 @@
 </ul>
 
 
+<div class="row">
+  <% @products.each do |product|%>
+    <div class="col-md-4">
+      <h2><a href="/client/products/<%= product["id"] %>"><%= product["name"] %></a></h2>
+      
+      <% if product["discounted"] %>
+        <h3>Discount Item!</h3>
+      <% else %>
+        <h3>Everyday Value!</h3>
+      <% end %>
+      
+      <h3 class="<%= 'red' if product['discounted'] %>"><%= product["formatted"]["price"] %></h3>
+      
+      <h5>Description: <%= product["description"] %></h5>
+      <h5>Supplier: <%= product["supplier"]["name"] %></h5>
+      <img src="<%= product["image_url"]%>" alt="">
 
-<%= form_tag "/client/products", method: :get do%>
-  <input type="text" name="search" placeholder="Search Term">
-  <input type="submit" value="Search">
-<% end %>
 
+      <div class="card mb-5" style="width: 18rem;">
+        <img class="card-img-top" src="<%= product["image_url"] %>" alt="">
+        <div class="card-body">
+          <h5 class="card-title"><%= product["name"]%></h5>
+          <h5 class="card-title"><%= product["title"]%></h5>
+          <p class="card-text">Price: <%= product["formatted"]["price"]%></p>
+          <p class="card-text">Description: <%= product["description"]%></p>
+          <p class="card-text">Supplier: <%= product["supplier"]["name"]%></p>
+          <a href="/" class="btn btn-primary">Go back to Homepage</a>
+        </div>
+      </div>
 
-<% @products.each do |product|%>
-  <h2><a href="/client/products/<%= product["id"] %>"><%= product["name"] %></a></h2>
-  
-  <% if product["discounted"] %>
-    <h3>Discount Item!</h3>
-  <% else %>
-    <h3>Everyday Value!</h3>
+    </div>
+
   <% end %>
-  
-  <h3 class="<%= 'red' if product['discounted'] %>"><%= product["formatted"]["price"] %></h3>
-  
-
-
-  <h5>Description:<%= product["description"] %></h5>
-  <h5>Supplier:<%= product["supplier"]["name"] %></h5>
-  <img src="<%= product["image_url"]%>" alt="">
-
-<% end %>
+</div>

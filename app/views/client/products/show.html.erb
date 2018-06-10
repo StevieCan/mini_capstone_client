@@ -2,8 +2,8 @@
 <h3>Price: <%= @product["formatted"]["price"]%></h3>
 <h3>Tax: <%= @product["formatted"]["tax"]%></h3>
 <h3>Total: <%= @product["formatted"]["total"]%></h3>
-<h5>Description:<%= @product["description"] %></h5>
-<h5>Supplier:<%= @product["supplier"]["name"] %></h5>
+<h5>Description: <%= @product["description"] %></h5>
+<h5>Supplier: <%= @product["supplier"]["name"] %></h5>
 
 <% @product["images"].each do |image| %>
   <img src="<%= image["url"] %>">
