@@ -1,4 +1,5 @@
 class Client::ProductsController < ApplicationController
+  
   def index
     client_params = {
                      search: params[:search],
