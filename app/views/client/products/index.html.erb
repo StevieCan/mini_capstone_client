@@ -18,7 +18,7 @@
 </ul>
 
 
-<div class="row">
+<!-- <div class="row">
   <% @products.each do |product|%>
     <div class="col-md-4">
       <h2><a href="/client/products/<%= product["id"] %>"><%= product["name"] %></a></h2>
@@ -33,15 +33,16 @@
       
       <h5>Description: <%= product["description"] %></h5>
       <h5>Supplier: <%= product["supplier"]["name"] %></h5>
-      <img src="<%= product["image_url"]%>" alt="">
+      <img src="<%= product["image_url"]%>" alt=""> -->
 
 
       <div class="card mb-5" style="width: 18rem;">
-        <img class="card-img-top" src="<%= product["image_url"] %>" alt="">
+        <!-- <img class="card-img-top" src="<%= product["image_url"] %>" alt=""> -->
+
         <div class="card-body">
           <h5 class="card-title"><%= product["name"]%></h5>
+          <img class="card-img" src="<%= product["image_url"] %>" alt="">
           <h5 class="card-title"><%= product["title"]%></h5>
-          <p class="card-image"><%= images["image_url"]%></p>
           <p class="card-text">Price: <%= product["formatted"]["price"]%></p>
           <p class="card-text">Description: <%= product["description"]%></p>
           <p class="card-text">Supplier: <%= product["supplier"]["name"]%></p>

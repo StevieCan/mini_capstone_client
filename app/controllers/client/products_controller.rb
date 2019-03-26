@@ -17,15 +17,17 @@ class Client::ProductsController < ApplicationController
 
   def new
     @product = {}
+    # @product = Product.new
     render 'new.html.erb'
   end
 
   def create
     @product = {
-                   'name' => params[:name],
-                   'price' => params[:price],
-                   'description' => params[:description],
-                   'supplier_id' => params[:supplier_id]
+                   name: params[:name],
+                   price: params[:price],
+                   description: params[:description],
+                   supplier_id: params[:supplier_id]
+                   # image_url: params[:image_url]
                   }
 
     response = Unirest.post(
@@ -33,6 +35,7 @@ class Client::ProductsController < ApplicationController
                             parameters: @product
                             )
 
+    product = response.body
     if response.code == 200
       flash[:success] = "Successfully created Product"
       redirect_to "/client/products/"
