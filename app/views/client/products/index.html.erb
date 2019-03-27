@@ -33,26 +33,24 @@
       
       <h5>Description: <%= product["description"] %></h5>
       <h5>Supplier: <%= product["supplier"]["name"] %></h5>
-      <img src="<%= product["image_url"]%>" alt=""> -->
+      <img src="<%= product["image_url"]%>" alt="">
+ -->
 
-
-      <div class="card mb-5" style="width: 18rem;">
-        <!-- <img class="card-img-top" src="<%= product["image_url"] %>" alt=""> -->
-
-        <div class="card-body">
-          <h5 class="card-title"><%= product["name"]%></h5>
-          <img class="card-img" src="<%= product["image_url"] %>" alt="">
-          <h5 class="card-title"><%= product["title"]%></h5>
-          <p class="card-text">Price: <%= product["formatted"]["price"]%></p>
-          <p class="card-text">Description: <%= product["description"]%></p>
-          <p class="card-text">Supplier: <%= product["supplier"]["name"]%></p>
-          <a href="/" class="btn btn-primary">Go back to Homepage</a>
-        </div>
-      </div>
-
+<div class="col-md-4">
+  <div class="card mb-5" style="width: 18rem;">      
+    <div class="card-body">
+      <h5 class="card-title"><%= product["name"]%></h5>
+      <img class="card-img" src="<%= product["image_url"] %>" alt="">
+      <h5 class="card-title"><%= product["title"]%></h5>
+      <p class="card-text">Price: <%= product["formatted"]["price"]%></p>
+      <p class="card-text">Description: <%= product["description"]%></p>
+      <p class="card-text">Supplier: <%= product["supplier"]["name"]%></p>
+      <a href="/" class="btn btn-primary">Go back to Homepage</a>
     </div>
-
-  <% end %>
+  </div>
 </div>
+
+<!--   <% end %>
+</div> -->
 
 
